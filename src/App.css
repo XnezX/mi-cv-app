@@ -1,0 +1,135 @@
+/* Estilos generales para la página */
+html, body {
+  height: 100%; /* Ocupa el 100% de la altura de la ventana */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar relleno */
+  overflow: hidden; /* Ocultar barras de desplazamiento del body */
+}
+
+body {
+  background: linear-gradient(white, #F5F5DC); /* Degradado de blanco a hueso */
+  color: black; /* Color general del texto en negro */
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+  width: 100vw; /* Ancho completo de la ventana */
+  height: 100vh; /* Altura completa de la ventana */
+  display: flex;
+  flex-direction: column; /* Alinear contenido verticalmente */
+  justify-content: flex-start; /* Alinear al inicio */
+  padding: 20px; /* Espaciado interno */
+  box-sizing: border-box; /* Incluir padding y bordes en el ancho y altura */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Transición suave para los colores */
+  overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+/* Ocultar la barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari) */
+.App::-webkit-scrollbar {
+  display: none; /* Oculta la barra de desplazamiento */
+}
+
+/* Ocultar la barra de desplazamiento para Firefox */
+.App {
+  scrollbar-width: none; /* Oculta la barra de desplazamiento */
+}
+
+/* Ocultar la barra de desplazamiento para Internet Explorer y Edge */
+.App {
+  -ms-overflow-style: none; /* Oculta la barra de desplazamiento */
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex; /* Usar flexbox para alinear los botones en fila */
+  justify-content: space-between; /* Espaciado uniforme entre botones */
+  width: 80%; /* Ancho del contenedor de botones */
+  margin: 20px auto; /* Centra el contenedor de botones */
+}
+
+/* Cada sección del botón */
+.button-section {
+  flex: 1; /* Hacer que cada sección del botón ocupe el mismo espacio */
+  margin: 0 10px; /* Espaciado lateral entre los botones */
+  display: flex;
+  flex-direction: column; /* Para que los elementos estén uno debajo del otro */
+  align-items: center; /* Centrar el contenido */
+}
+
+/* Estilos para los botones */
+button {
+  width: 100%; /* Hacer que los botones ocupen todo el ancho de su contenedor */
+  padding: 10px 0; /* Relleno de botones */
+  border: none; /* Sin bordes */
+  background-color: #000000; /* Fondo de botones */
+  color: rgb(254, 254, 254); /* Color de texto en botones */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+  transition: background-color 0.3s ease; /* Transición suave en el fondo */
+}
+
+button:hover {
+  background-color: #333; /* Fondo del botón al pasar el cursor */
+}
+
+/* Secciones de contenido */
+section {
+  overflow: hidden;
+  height: 0; /* Comienza con altura 0 */
+  opacity: 0; /* Invisible al principio */
+  transition: height 0.5s ease, opacity 0.5s ease; /* Transición suave */
+}
+
+/* Sección visible */
+section.show {
+  height: auto; /* Permitir que la altura se ajuste automáticamente */
+  opacity: 1; /* Hacer visible */
+}
+
+/* Inversión de colores */
+.inverted {
+  background-color: #333; /* Color de fondo oscuro al mostrar */
+  color: white; /* Color de texto blanco al mostrar */
+}
+
+/* Encabezado */
+.h1 {
+  font-size: 3.5em; /* Tamaño del encabezado principal */
+  margin: 0.5em 0; /* Espaciado vertical */
+}
+
+.h2 {
+  font-size: 2.5em; /* Tamaño del subencabezado */
+  margin: 0.5em 0; /* Espaciado vertical */
+}
+
+/* Imágenes */
+.image {
+  width: 40px; /* Ajusta el tamaño que desees */
+  height: 40px; /* Ajusta el tamaño que desees */
+  display: block; /* Para asegurarse que se muestren en una nueva línea, debajo del botón */
+  margin: 5px auto; /* Centrar las imágenes debajo del botón */
+  object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+}
+
+/* Contenedor de las imágenes de lenguajes */
+.languages-container {
+  margin-top: 40px; /* Espacio por encima de las imágenes */
+}
+
+.languages {
+  display: flex; /* Alinear en fila las imágenes */
+  justify-content: center;
+  gap: 20px; /* Espacio entre imágenes */
+}
+
+.language-image {
+  width: 40px; /* Tamaño de las imágenes */
+  height: 40px;
+  object-fit: contain; /* Asegura que las imágenes no se deformen */
+  transition: transform 0.3s ease; /* Transición suave para agrandar al hacer hover */
+}
+
+.language-image:hover {
+  transform: scale(1.1); /* Efecto de agrandado al pasar el ratón por encima */
+}
